@@ -22,7 +22,7 @@ class uwsgi::params {
     $log_rotate          = 'no'
     $python_pip          = 'python-pip'
 
-    case $::osfamily {
+    case $facts['os']['family'] {
         redhat: {
             $app_directory = '/etc/uwsgi.d'
             $pidfile       = '/var/run/uwsgi/uwsgi.pid'
